@@ -17,22 +17,22 @@
                 <form>
                     <h2>SignUp</h2>
                     <div class="input-container">
-                        <input type="text" required="" />
+                        <input type="text" data-user="name" type="text" required="" />
                         <label>Full Name</label>
                     </div>
                     <div class="input-container">
-                        <input type="mail" required="" />
+                        <input type="text" data-user="email" type="mail" required="" />
                         <label>Email</label>
                     </div>
                     <div class="input-container">
-                        <input type="mail" required="" />
+                        <input type="password" data-user="password" type="mail" required="" />
                         <label>Password</label>
                     </div>
                     <div class="input-container">
-                        <input type="mail" required="" />
+                        <input type="password" data-user="passwordConfirm" type="mail" required="" />
                         <label>Confirm password</label>
                     </div>
-                    <button class="btn">SignUp</button>
+                    <button id="btn" class="btn">SignUp</button>
                     <p>
                         already have an account? <a href="/">SignIn</a>
                     </p>
@@ -59,7 +59,7 @@
     <div class="content flex">
         <p>By Fernando T. Frantz</p>
     </div>
-    <script src="../../../script.js"></script>
+    <script src="./script.js"></script>
 
 </body>
 
