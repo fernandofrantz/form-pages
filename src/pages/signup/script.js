@@ -8,9 +8,14 @@ const button = document.getElementById("btn");
 const verifyFields = (name, email, password, passwordConfirm) => {
     let stringBuilder = "";
 
-    name.value.length === 1 ? stringBuilder += "use your complete name\n" : null;
+    // full name validation
+    if (name.value === "") {
+        stringBuilder += "name is a required field\n"
+    } else if (name.value.length < 2) {
+        stringBuilder += "use your complete name\n"
+    }
 
-
+    // email validation
     if (email.value !== "") {
         if (email.value.split("@").length > 1) {
             if (email.value.split("@")[1] === "") {
@@ -30,8 +35,17 @@ const verifyFields = (name, email, password, passwordConfirm) => {
         stringBuilder += "e-mail is a required field\n"
     }
 
-    console.log(stringBuilder)
-
+    // password validation
+    if (password !== "" && passwordConfirm !== "") {
+        if (password.value.length < 8) {
+            stringBuilder += "password must contain at least 8 characters\n";
+        } else if (password.value !== passwordConfirm.value) {
+            stringBuilder += "passwords don't match\n";
+        }
+    }
+    if (stringBuilder !== "") {
+        alert(stringBuilder);
+    }
 }
 
 button.addEventListener("click", (evt) => {
